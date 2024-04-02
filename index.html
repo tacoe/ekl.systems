@@ -37,7 +37,7 @@
     <body>
         <canvas></canvas>
         <script type="text/javascript">
-            // 3D code by https://codepen.io/funxer
+            // based on a 3D effect by https://codepen.io/funxer
             const canvas = document.querySelector('canvas');
             const ctx = canvas.getContext('2d');
             const layers = 8;
@@ -99,7 +99,7 @@
             function init(e) {
             if (e) e.preventDefault();
             cancelAnimationFrame(animFrame);
-            const text = 'EKL SYSTEMS';
+            const text = 'ekl systems';
             let fontSize = 200;
             let fontString = `500 ${fontSize}px Arial`;
             let startX = canvas.width / 2;
@@ -139,7 +139,7 @@
             }
             
             targets = targets.sort((a, b) => a.x - b.x);
-            loop();
+            setTimeout(loop,1000);
             return false;
             }
             
@@ -174,7 +174,7 @@
                         .sort((pa, pb) => pb.target.z - pa.target.z)
                         .forEach((p, i) => {
                         if (p.interpolant < 1) {
-                            p.interpolant = Math.min(p.interpolant + .01, 1);
+                            p.interpolant = Math.min(p.interpolant + .005, 1);
                             p.position.x = lerp(p.interpolant, p.position.x, p.target.x);
                             p.position.y = lerp(p.interpolant, p.position.y, p.target.y);
                         }
@@ -187,7 +187,7 @@
                         .pp();
                         
                         const s = 1 - (p.position.z / layers);
-                        ctx.fillStyle = `hsl(${20-s*240},100%,${s*50}%)`;
+                        ctx.fillStyle = `hsl(${20-s*240},100%,${25+s/2*50}%)`;
                         ctx.globalCompositeOperation = 'screen';                    
                         ctx.fillRect(particle.x/2 + canvas.width/4, particle.y/2 + canvas.height/4, s * size / 2, s * size / 2);
                     });
@@ -200,7 +200,7 @@
         </script>
         <div id="main">
             <p class="header">
-                Autonomous systems lab
+                autonomous systems lab
             </p>
             <p>
                 Ekl Systems develops new ways for fully autonomous systems to navigate and improve the world around us.
