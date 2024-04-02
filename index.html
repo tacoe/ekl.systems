@@ -187,7 +187,7 @@
                         .pp();
                         
                         const s = 1 - (p.position.z / layers);
-                        ctx.fillStyle = `hsl(${40-s*240},100%,${s*50}%)`;
+                        ctx.fillStyle = `hsl(${20-s*240},100%,${s*50}%)`;
                         ctx.globalCompositeOperation = 'screen';                    
                         ctx.fillRect(particle.x/2 + canvas.width/4, particle.y/2 + canvas.height/4, s * size / 2, s * size / 2);
                     });
