@@ -11,7 +11,7 @@
             position: absolute;
             top: 35%;
             left: 50%;
-            width: 600px;
+            width: 650px;
             margin-left: -300px;
             text-align: center;
         }
@@ -189,7 +189,7 @@
                         const s = 1 - (p.position.z / layers);
                         ctx.fillStyle = `hsl(${20-s*240},100%,${25+s/2*50}%)`;
                         ctx.globalCompositeOperation = 'screen';                    
-                        ctx.fillRect(particle.x/2 + canvas.width/4, particle.y/2 + canvas.height/4, s * size / 2, s * size / 2);
+                        ctx.fillRect(particle.x, particle.y+300, s * size / 2, s * size / 2);
                     });
                 }
             
@@ -203,7 +203,7 @@
                 autonomous systems lab
             </p>
             <p>
-                Ekl Systems develops new ways for fully autonomous systems to navigate and improve the world around us.
+                Ekl Systems develops new ways for fully autonomous systems to navigate and help improve the world around us.
             </p>
             <p>
                 <a href="https://forms.gle/G8tfPuYgX4SHsCCk7">Contact</a>
